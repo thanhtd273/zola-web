@@ -3,7 +3,7 @@ import React from "react";
 
 const Header = ({ data }) => {
   return (
-    <header id="header row">
+    <header id="header">
       <div className="row chat-info">
         <Avatar
           image="https://s120-ava-talk.zadn.vn/d/e/1/c/13/120/545e4fc56c05782e18fa0f7d81bd162c.jpg"

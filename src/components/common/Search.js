@@ -1,7 +1,7 @@
 import React from "react";
 import { InputText } from "primereact/inputtext";
 
-const Search = () => {
+const Search = ({ onAddFriend, onAddGroup }) => {
   return (
     <div id="contact-search" className="center space-around">
       <div className="group-search grid-item">
@@ -17,10 +17,10 @@ const Search = () => {
       </div>
 
       <div className="icon-group">
-        <span className="contact-icon center">
+        <span className="contact-icon center" onClick={onAddFriend}>
           <i className="pi pi-user-plus icon" />
         </span>
-        <span className="contact-icon center">
+        <span className="contact-icon center" onClick={onAddGroup}>
           <i className="pi pi-users icon" />
         </span>
       </div>

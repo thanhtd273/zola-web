@@ -4,11 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { PREFIX } from "../../constants/Global";
 import { getCacheData } from "../../utils/helper";
 import * as CONSTANTS from "../../constants";
-import ConversationList from "../../components/conversation/ConversationList";
-import Search from "../../components/common/Search";
 import SideBar from "../../components/common/SideBar";
-import Header from "../../components/common/Header";
-import ChatContainer from "../../components/chat";
+import ChatPage from "../../pages/chat";
+import ContactPage from "../contact";
+import TaskPage from "../task";
 
 const data = {
   name: "Nhà miềng",
@@ -33,28 +32,27 @@ const Index = () => {
     setToken(getCacheData(CONSTANTS.AUTH_TOKEN));
   }, [token]);
 
-  const renderPanel = () => {
-    if (activeTab === 1) return <ConversationList />;
+  const renderContent = () => {
+    if (activeTab === 1) return <ChatPage />;
+    switch (activeTab) {
+      case 1:
+        return <ChatPage />;
+      case 2:
+        return <ContactPage />;
+      case 3:
+        return <TaskPage />;
+      default:
+        break;
+    }
   };
 
-  const renderContent = () => {
-    if (activeTab === 1) return;
-  };
+  if (!token) navigate(PREFIX + "/login");
 
   return (
     <div id="container">
       <div className="row">
         <SideBar activeTab={activeTab} onChange={onChangeTab} />
-        <div className="panel-container">
-          <Search />
-          {renderPanel()}
-        </div>
-        <main>
-          <div className="main__center animated col">
-            <Header data={data} />
-            <ChatContainer />
-          </div>
-        </main>
+        {renderContent()}
       </div>
     </div>
   );

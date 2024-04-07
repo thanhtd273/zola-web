@@ -208,3 +208,74 @@ input {
   border: none;
   outline: none;
 }
+
+.flx-center {
+  justify-content: center;
+}
+
+.flx-1 {
+  flex: 1;
+}
+
+.middle-flex {
+  align-items: center;
+}
+
+.zl-modal {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background: var(--BA50);
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  contain: layout;
+  display: flex;
+  align-items: stretch;
+  flex-flow: column nowrap;
+}
+
+.ovf-hidden {
+  overflow: hidden;
+}
+
+.f16 {
+  font-size: 16px !important;
+}
+
+.between-flex {
+  justify-content: space-between;
+}
+
+.flx,
+.flx-col,
+.stack-navigation {
+  flex-flow: row nowrap;
+  display: flex;
+}
+
+button {
+  font-family: inherit;
+  background: transparent;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.rel {
+  position: relative;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.mr-8 {
+  margin-left: 8px;
+}

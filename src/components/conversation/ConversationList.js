@@ -13,20 +13,20 @@ const ConversationList = () => {
 
   const token = getCacheData(AUTH_TOKEN);
 
-  useEffect(() => {
-    axios({
-      url: APIs.MY_CONVERSATION,
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((res) => {
-        setData(res.data.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios({
+  //     url: APIs.MY_CONVERSATION,
+  //     headers: {
+  //       Authorization: `Bearer ${token}`,
+  //     },
+  //   })
+  //     .then((res) => {
+  //       setData(res.data.data);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // }, []);
 
   const onClickAction = (e) => actionRef.current?.toggle(e);
 

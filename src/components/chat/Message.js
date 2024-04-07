@@ -6,7 +6,7 @@ import { classNames } from "primereact/utils";
 
 const Message = ({ data }) => {
   const currentUser = getCacheData();
-  const isCurrentUser = data?.ownerId === currentUser.userId;
+  const isCurrentUser = data?.ownerId === currentUser?.userId;
   return (
     <div
       className={classNames({
